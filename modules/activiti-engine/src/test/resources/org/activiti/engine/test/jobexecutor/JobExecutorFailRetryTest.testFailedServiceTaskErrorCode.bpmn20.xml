@@ -17,7 +17,7 @@
 	       	</extensionElements>
 		</serviceTask>
 		<boundaryEvent id="catchError" attachedToRef="failingServiceTask">
-  			<errorEventDefinition errorRef="myError"/>
+  			<errorEventDefinition errorRef="failedRetry"/>
 		</boundaryEvent>
 		<sequenceFlow id="errorFlow" sourceRef="catchError" targetRef="registerCaughtBpmnError" />
  		<serviceTask id="registerCaughtBpmnError" activiti:async="false" activiti:class="org.activiti.engine.test.jobexecutor.RetryBpmnErrorIndicator" />
